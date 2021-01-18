@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.roomdbexample.roomdb.Event;
+import com.example.roomdbexample.RoomDb.Event;
 
 import java.util.List;
 
