@@ -1,0 +1,32 @@
+package com.example.roomdbexample.RoomDb;
+
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
+public class Event {
+
+    @ColumnInfo(name = "id")
+    @PrimaryKey(autoGenerate = true)
+    public int _id;
+
+    @ColumnInfo(name = "title")
+    public String title;
+
+    @ColumnInfo(name = "date")
+    public String date;
+
+    @ColumnInfo(name = "img_id")
+    public int img_id;
+
+    public Event(){};
+
+    public Event(int _id, String title, String date, int img_id) {
+        this._id = _id;
+        this.title = title;
+        this.date = date;
+        this.img_id = img_id;
+    }
+}
