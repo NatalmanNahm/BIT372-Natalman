@@ -6,4 +6,6 @@
         <item>Gathering</item>
         <item>Food</item>
     </string-array>
+    <string name="action_add">Add</string>
+    <string name="action_menu">Menu</string>
 </resources>
