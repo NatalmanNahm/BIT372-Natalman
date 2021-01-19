@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent intent = new Intent(this, CreateEventActivity.class);
-        FloatingActionButton fab = findViewById(R.id.add_event_btn);
-        fab.setOnClickListener((view) -> startActivity(intent));
         eventList = findViewById(R.id.event_list);
     }
 
@@ -56,8 +54,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent intent = new Intent(this, CreateEventActivity.class);
-        startActivity(intent);
-        return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case R.id.action_add:
+                Intent intent = new Intent(this, CreateEventActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
     }
 }
