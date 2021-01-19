@@ -23,8 +23,7 @@ public class Event {
 
     public Event(){};
 
-    public Event(int _id, String title, String date, int img_id) {
-        this._id = _id;
+    public Event(String title, String date, int img_id) {
         this.title = title;
         this.date = date;
         this.img_id = img_id;
