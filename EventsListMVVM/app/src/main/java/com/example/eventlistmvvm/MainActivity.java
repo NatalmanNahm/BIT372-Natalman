@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         eventList.setLayoutManager(new LinearLayoutManager(this));
 
         // TODO: Create the ViewModel instance here
+        ViewModelProvider.Factory factory = new ViewModelProvider.NewInstanceFactory();
         eventVM.init(getApplicationContext());
 
         EventAdapter adapter = new EventAdapter(eventVM.getEvents().getValue());
