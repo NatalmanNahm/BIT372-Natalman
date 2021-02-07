@@ -1,4 +1,0 @@
-#Sun Jan 31 15:52:41 CST 2021
-base.0=/Users/natking/AndroidStudioProjects/BIT372-Natalman/EventsListMVVM/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
