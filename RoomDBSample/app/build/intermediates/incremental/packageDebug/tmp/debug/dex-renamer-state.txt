@@ -1,4 +1,0 @@
-#Mon Jan 18 18:56:19 CST 2021
-base.0=/Users/natking/AndroidStudioProjects/BIT372-Natalman/RoomDBSample/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
