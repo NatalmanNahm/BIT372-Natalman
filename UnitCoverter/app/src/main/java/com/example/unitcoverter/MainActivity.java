@@ -32,10 +32,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         kgBtn.setOnClickListener(v -> {
-            if (lbsEditText.getText().length() == 0)
-                return;
-            double kg = Converter.lbsToKg(Float.parseFloat(lbsEditText.getText().toString()));
-            kgTextView.setText(String.format("%2f Kg", kg));
+            if (lbsEditText.getText().length() == 0 || lbsEditText.getText().toString().equals("0")) {
+                kgTextView.setText("Cannot convert 0 lbs");
+            } else {
+                double kg = Converter.lbsToKg(Float.parseFloat(lbsEditText.getText().toString()));
+                kgTextView.setText(String.format("%.2f Kg", kg));
+            }
+
         });
     }
 }
