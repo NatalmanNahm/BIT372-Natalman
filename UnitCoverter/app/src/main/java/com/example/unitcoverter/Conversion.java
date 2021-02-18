@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData;
 
 public class Conversion {
 
-    MutableLiveData<String> convert;
+    public MutableLiveData<String> convert;
 
     public Conversion(String convert) {
         this.convert = new MutableLiveData<>();

@@ -2,4 +2,7 @@
     <string name="app_name">Unit Coverter</string>
     <string name="convert_kg">Lbs to Kg</string>
     <string name="kg">Kg</string>
+    <string name="f_to_c">Fahrenheit to Celsius</string>
+    <string name="celsius">ºC</string>
+    <string name="fahrenheit">ºF</string>
 </resources>
