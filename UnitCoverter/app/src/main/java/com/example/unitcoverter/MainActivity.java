@@ -5,8 +5,10 @@ import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.unitcoverter.databinding.ActivityMainBinding;
@@ -22,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setLifecycleOwner(this);
         binding.setConversion(conversion);
+
+        Spinner conversionType = findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter =
+                ArrayAdapter.createFromResource(this, R.array.conversion_type,
+                        android.R.layout.simple_spinner_dropdown_item);
+        conversionType.setAdapter(adapter);
 
         Button fbtn = findViewById(R.id.convert_btn);
         EditText finput = findViewById(R.id.fahrenheit_input);
