@@ -2,9 +2,12 @@ package com.example.unitcoverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,10 +23,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Conversion conversion = new Conversion("");
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setLifecycleOwner(this);
+        Conversion conversion = new Conversion("", getString(R.string.f_to_c));
         binding.setConversion(conversion);
+
 
         Spinner conversionType = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter =
@@ -31,10 +35,37 @@ public class MainActivity extends AppCompatActivity {
                         android.R.layout.simple_spinner_dropdown_item);
         conversionType.setAdapter(adapter);
 
+        conversionType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String type = (String) parent.getItemAtPosition(position);
+                Log.i("TYPE", type);
+
+                switch (type){
+                    case "ºF to ºC":
+                        conversion.conversionLabel.setValue(getString(R.string.f_to_c));
+                        break;
+                    case "Lbs to Kg":
+                        conversion.conversionLabel.setValue(getString(R.string.lbs_to_kg));
+                        break;
+                    case "Mile to Km":
+                        conversion.conversionLabel.setValue(getString(R.string.mile_to_km));
+                        break;
+                    case "Ft to Meter":
+                        conversion.conversionLabel.setValue(getString(R.string.ft_to_meter));
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         Button fbtn = findViewById(R.id.convert_btn);
         EditText finput = findViewById(R.id.fahrenheit_input);
         TextView ctxt = findViewById(R.id.celcius_text);
-
 
         fbtn.setOnClickListener(v -> {
             if (finput.getText().length() == 0)
