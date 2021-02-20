@@ -67,20 +67,4 @@ public class MainActivityUITest {
         onView(withId(R.id.convert_btn)).perform(click());
         onView(withId(R.id.celcius_text)).check(matches(withText("75.00 miles is 120.70 km")));
     }
-
-
-
-//    @Test
-//    public void can_convert_to_kg(){
-//        onView(withId(R.id.lbs_editText)).perform(typeText("50"));
-//        onView(withId(R.id.convert_to_kg)).perform(click());
-//        onView(withId(R.id.kg_convert)).check(matches(withText("22.68 Kg")));
-//    }
-//
-//    @Test
-//    public void cannot_convert_0lbs(){
-//        onView(withId(R.id.lbs_editText)).perform(typeText("0"));
-//        onView(withId(R.id.convert_to_kg)).perform(click());
-//        onView(withId(R.id.kg_convert)).check(matches(withText("Cannot convert 0 lbs")));
-//    }
 }
