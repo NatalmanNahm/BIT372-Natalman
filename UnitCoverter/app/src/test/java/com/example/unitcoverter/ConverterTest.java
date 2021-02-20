@@ -19,4 +19,14 @@ public class ConverterTest {
     public void test_lbs_to_kg_isCorrect() {
         assertEquals(6.80, Converter.lbsToKg(15),6.81);
     }
+
+    @Test
+    public void test_convert_to_km_isCorrect(){
+        assertEquals(40.23, Converter.mileToKm(25), 40.24);
+    }
+
+    @Test
+    public void test_convert_to_meter(){
+        assertEquals(16.76, Converter.feetToMeter(55), 16.77);
+    }
 }
