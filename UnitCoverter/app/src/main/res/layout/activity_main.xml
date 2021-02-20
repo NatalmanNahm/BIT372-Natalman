@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             tools:text="ºC"
-            android:text="@{conversion.convert + `ºF is ºC` }"
+            android:text="@{conversion.convert + conversion.type}"
             app:layout_constraintEnd_toStartOf="@+id/convert_btn"
             app:layout_constraintHorizontal_bias="0.104"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,13 +1,15 @@
 <resources>
     <string name="app_name">Unit Coverter</string>
-    <string name="convert_kg">Lbs to Kg</string>
-    <string name="kg">Kg</string>
+    <string name="convert_kg">Lbs is Kg</string>
+    <string name="convert_c">ºF is ºC</string>
+    <string name="convert_km">Mile is Km</string>
+    <string name="convert_meter">Ft is Meter</string>
+
     <string name="f_to_c">Fahrenheit to Celsius</string>
     <string name="lbs_to_kg">Pound to Kilogram</string>
     <string name="mile_to_km">Mile to Kilometer</string>
     <string name="ft_to_meter">Feet to Meter</string>
-    <string name="celsius">ºC</string>
-    <string name="fahrenheit">ºF</string>
+
 
     <string-array name="conversion_type">
         <item>ºF to ºC</item>
