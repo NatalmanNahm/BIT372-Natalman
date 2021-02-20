@@ -71,12 +71,38 @@ public class MainActivity extends AppCompatActivity {
         EditText finput = findViewById(R.id.fahrenheit_input);
         TextView ctxt = findViewById(R.id.celcius_text);
 
+
+
         fbtn.setOnClickListener(v -> {
+
+            TextView label = findViewById(R.id.conversion_label);
+            String type = label.getText().toString();
+
             if (finput.getText().length() == 0)
                 return;
-            int fahrenheit = Integer.parseInt(finput.getText().toString());
-            double celcius = Converter.toCelcius(Float.parseFloat(finput.getText().toString()));
-            ctxt.setText(String.format("%d ºF is %.2f ºC",fahrenheit, celcius));
+            float unitToBeConverted = Float.parseFloat(finput.getText().toString());
+
+            switch (type){
+                case "Fahrenheit to Celsius":
+                    double celcius = Converter.toCelcius(unitToBeConverted);
+                    ctxt.setText(String.format("%.2f ºF is %.2f ºC",unitToBeConverted, celcius));
+                    break;
+                case "Pound to Kilogram":
+                    double kg = Converter.lbsToKg(unitToBeConverted);
+                    ctxt.setText(String.format("%.2f lbs is %.2f kg",unitToBeConverted, kg));
+                    break;
+                case "Mile to Kilometer":
+                    double km = Converter.mileToKm(unitToBeConverted);
+                    ctxt.setText(String.format("%.2f miles is %.2f km",unitToBeConverted, km));
+                    break;
+                case "Feet to Meter":
+                    double meter = Converter.feetToMeter(unitToBeConverted);
+                    ctxt.setText(String.format("%.2f ft is %.2f meters",unitToBeConverted, meter));
+                    break;
+                default:
+                    ctxt.setText("No conversion chosen");
+            }
+
         });
     }
 }
